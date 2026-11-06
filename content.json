@@ -1,0 +1,648 @@
+{
+  "_readme": [
+    "这是网站的全部文字内容。改这里，页面就跟着变，不需要懂 HTML。",
+    "1. 直接修改引号里的中文即可；每项之间用英文逗号分隔，最后一个不要加逗号。",
+    "2. 任何文字里都可以用 **文字** 表示加粗；段落、简介等字段也支持简单 HTML（如 <a href=\"\">链接</a>、<em>斜体</em>）。",
+    "3. 数组（[ ]）里的每一项用 { } 包住，想加一条经历/一篇论文，就复制一整段 { } 再改内容。",
+    "4. tags 里以 ! 开头的标签会显示为金色，例如 \"!Best Paper\"。",
+    "5. publications 里 type 只能是 conference（会议）、journal（期刊）、preprint（预印本），筛选按钮会自动统计数量。",
+    "6. 不想要的某项内容，三种写法都可以：把值留空（\"\"）、写成空数组（[]）、或把那一行整个删掉（注意别删掉上一行末尾的逗号）。留空的项不会在页面上留下空框、空标题或多余空隙。",
+    "7. 板块自动隐藏：某个板块的内容全空时（如 experience 一条都没有、join.items 为 []），该板块整块消失，顶部导航也不显示，板块编号自动连续重排。",
+    "7b. 想保留内容但暂时不展示某个板块（比如还没准备好论文列表）：在该板块的 sections 里加 \"hide\": true，例如 \"news\": { \"title\": \"研究动态\", \"hide\": true }。改成 false 或删掉这一行即可恢复。",
+    "7c. 必须保留的只有两项：profile.name（姓名）和每篇论文的 title。这两项留空会显示空白标题，其余字段都可以留空。",
+    "8. photo 填图片文件名（如 \"photo.jpg\"，与 index.html 放在同一目录）；留空 \"\" 显示姓名首字占位图（initial 也留空时会自动取姓名第一个字）；填 \"none\" 则完全不要右侧头像，版面自动变成单栏。",
+    "9. 左上角头像字母、网页标题、页脚等都在 site 里。",
+    "10. 配色主题：改 site.theme 即可，可选 green（森林绿，默认）、lightblue（浅蓝）、navy（海军蓝）、lightgreen（浅绿）、deepgreen（深绿）、red（红）、orange（橙）、purple（紫）、graphite（石墨灰）。临时预览某个主题可在网址后加 ?theme=navy。",
+    "11. 保存后，双击“启动预览.bat”查看效果（直接双击 index.html 浏览器会拒绝读取 JSON）。",
+    "10. PDF 文件放在 files 文件夹里（与 index.html 同级），然后填相对路径，例如 \"files/cv.pdf\"。放好后重新发布即可被访客下载。",
+    "11. 想点击直接下载而不是在浏览器里预览，给这一项加 \"download\": true；想指定下载后的文件名，写 \"download\": \"张明远-简历.pdf\"。",
+    "12. 站内文件链接会自查：文件不存在时该链接自动隐藏，不会点出 404。所以可以先写好路径，等文件放进去它就会出现。"
+  ],
+  "site": {
+    "lang": "zh-CN",
+    "theme": "red",
+    "title": "张明远 | 个人学术主页",
+    "description": "张明远，某某大学计算机科学与技术学院副教授，研究方向为高效多模态学习、可信人工智能与 AI for Science。",
+    "brandMark": "张",
+    "footerLeft": "© 2026 张明远 · 某某大学 高效智能系统实验室",
+    "footerRight": "本站信息最后更新：2026 年 11 月"
+  },
+  "sections": {
+    "about": {
+      "title": "个人简介",
+      "sub": "About",
+      "nav": "简介"
+    },
+    "research": {
+      "title": "研究方向",
+      "sub": "Research"
+    },
+    "experience": {
+      "title": "教育与工作经历",
+      "sub": "Education & Experience",
+      "nav": "经历"
+    },
+    "news": {
+      "title": "研究动态",
+      "sub": "News"
+    },
+    "publications": {
+      "title": "发表论文",
+      "sub": "Selected Publications",
+      "nav": "论文"
+    },
+    "join": {
+      "title": "招生与合作",
+      "sub": "Join Us",
+      "nav": "招生"
+    },
+    "contact": {
+      "title": "联系方式",
+      "sub": "Contact",
+      "nav": "联系"
+    }
+  },
+  "profile": {
+    "name": "张明远",
+    "nameEn": "Mingyuan Zhang",
+    "initial": "张",
+    "eyebrow": "Associate Professor · 人工智能与数据科学",
+    "tagline": "某某大学计算机科学与技术学院副教授。研究如何让机器学习系统在真实世界中**更高效、更可信**地工作——从多模态大模型的稀疏化推理，到医疗与生命科学场景中的落地。",
+    "keywords": [
+      "高效多模态学习",
+      "可信与可解释 AI",
+      "AI for Science",
+      "机器学习系统"
+    ],
+    "buttons": [
+      {
+        "label": "发送邮件",
+        "href": "mailto:mingyuan.zhang@example.edu.cn",
+        "icon": "mail",
+        "style": "primary"
+      },
+      {
+        "label": "下载简历 PDF",
+        "href": "files/cv.pdf",
+        "icon": "download",
+        "download": true
+      },
+      {
+        "label": "Google Scholar",
+        "href": "https://scholar.google.com/",
+        "icon": "scholar"
+      }
+    ],
+    "stats": [
+      {
+        "value": "40+",
+        "label": "发表论文"
+      },
+      {
+        "value": "3,200+",
+        "label": "Google 引用"
+      },
+      {
+        "value": "28",
+        "label": "h-index"
+      }
+    ],
+    "photo": "",
+    "photoCaption": "某某大学 · 信息楼 512"
+  },
+  "about": {
+    "factsTitle": "Quick Facts",
+    "paragraphs": [
+      "我是**某某大学计算机科学与技术学院副教授**，隶属于人工智能与数据科学研究院，同时担任「高效智能系统」课题组负责人。在此之前，我在微软亚洲研究院视觉计算组担任研究员，并于清华大学计算机科学与技术系获得博士学位、浙江大学获得学士学位。",
+      "我的研究围绕一个核心问题展开：**当模型规模不断增长时，如何让它跑得动、算得起、也值得信任？** 具体而言，我关注多模态大模型中的稀疏激活与 Token 压缩、面向检索增强生成的可信度评测，以及这些方法在医学影像、临床文本与蛋白质功能预测中的实际效果。我的工作发表在 NeurIPS、CVPR、ACL、ICML、MLSys 等会议与 Nature Machine Intelligence、IEEE TPAMI 等期刊上，并有多项成果被开源工具链与工业系统采用。",
+      "我乐于与来自医学、生命科学、人机交互等不同背景的研究者合作——很多有意思的问题，都长在学科的边界上。如果你也对这些问题感兴趣，欢迎随时写信给我。"
+    ],
+    "quote": "做研究最愉快的时刻，是发现一个原本以为只是工程细节的地方，其实藏着一个值得回答的科学问题。",
+    "facts": [
+      {
+        "label": "职称",
+        "value": "副教授（终身教职）"
+      },
+      {
+        "label": "单位",
+        "value": "某某大学<br>计算机科学与技术学院"
+      },
+      {
+        "label": "课题组",
+        "value": "高效智能系统实验室 (EIS Lab)"
+      },
+      {
+        "label": "邮箱",
+        "value": "mingyuan.zhang@example.edu.cn"
+      },
+      {
+        "label": "办公室",
+        "value": "信息楼 512 室"
+      },
+      {
+        "label": "招生",
+        "value": "博士生 / 硕士生 / 科研实习生"
+      }
+    ]
+  },
+  "research": {
+    "items": [
+      {
+        "title": "高效多模态学习",
+        "description": "研究视觉—语言模型的稀疏激活、Token 压缩与动态路由机制，在保持精度的前提下把推理成本降下来，让大模型能在单卡与端侧设备上真正跑起来。",
+        "keywords": [
+          "稀疏专家",
+          "Token 剪枝",
+          "端侧推理"
+        ]
+      },
+      {
+        "title": "可信与可解释 AI",
+        "description": "构建面向检索增强生成的幻觉检测与事实一致性评测基准，并通过概念瓶颈模型让高风险场景下的模型决策变得可以被医生、法官和用户读懂与追问。",
+        "keywords": [
+          "幻觉检测",
+          "RAG 评测",
+          "概念可解释性"
+        ]
+      },
+      {
+        "title": "AI for Science",
+        "description": "与医学院和生命科学学院合作，把多模态预训练用于蛋白质功能注释、影像报告联合建模与罕见病辅助诊断，关注数据稀缺与跨中心分布偏移下的泛化能力。",
+        "keywords": [
+          "医学影像",
+          "蛋白质功能",
+          "小样本泛化"
+        ]
+      },
+      {
+        "title": "机器学习系统",
+        "description": "关注异构硬件上的分布式训练与推理调度、显存优化与算子融合，并把实验室的原型系统整理成可复现的开源工具，供同行直接使用。",
+        "keywords": [
+          "分布式训练",
+          "异构调度",
+          "开源工具链"
+        ]
+      }
+    ]
+  },
+  "experience": [
+    {
+      "period": "2026.07 — 至今",
+      "title": "副教授（终身教职）",
+      "org": "某某大学 · 计算机科学与技术学院",
+      "current": true,
+      "note": "主持「高效智能系统」课题组，讲授《机器学习系统》《多模态学习》等课程。"
+    },
+    {
+      "period": "2023.09 — 2026.06",
+      "title": "助理教授",
+      "org": "某某大学 · 计算机科学与技术学院",
+      "note": "建立课题组，获国家自然科学基金青年项目、校级启动经费支持。"
+    },
+    {
+      "period": "2024.09 — 2025.08",
+      "title": "访问学者",
+      "org": "MIT CSAIL",
+      "note": "与 XXX 教授课题组合作，研究高效推理架构与硬件协同设计。"
+    },
+    {
+      "period": "2021.07 — 2023.08",
+      "title": "研究员",
+      "org": "微软亚洲研究院 · 视觉计算组",
+      "note": "负责多模态预训练模型的效率优化，成果应用于多项产品线。"
+    },
+    {
+      "period": "2018.07 — 2021.06",
+      "title": "副研究员",
+      "org": "微软亚洲研究院 · 视觉计算组",
+      "note": "从事视觉—语言预训练与跨模态检索研究。"
+    },
+    {
+      "period": "2013.09 — 2018.06",
+      "title": "博士 · 计算机科学与技术",
+      "org": "清华大学",
+      "note": "导师：XXX 教授。博士论文《面向大规模视觉理解的高效表征学习》获校级优秀博士学位论文。"
+    },
+    {
+      "period": "2009.09 — 2013.06",
+      "title": "学士 · 计算机科学与技术",
+      "org": "浙江大学",
+      "note": "获竺可桢学院荣誉学位，毕业论文获评优秀。"
+    }
+  ],
+  "news": [
+    {
+      "date": "2026.10",
+      "iso": "2026-10",
+      "text": "获国家自然科学基金**优秀青年科学基金**资助，项目方向为「多模态大模型的高效推理与可信评测」。",
+      "tags": [
+        "New"
+      ]
+    },
+    {
+      "date": "2026.09",
+      "iso": "2026-09",
+      "text": "三篇论文被 <em>NeurIPS 2026</em> 接收，其中《Sparse Routing for Efficient Multimodal Fusion》入选 **Spotlight**。",
+      "tags": []
+    },
+    {
+      "date": "2026.06",
+      "iso": "2026-06",
+      "text": "受邀担任 <em>ACL 2027</em> 领域主席（Area Chair），负责多模态与高效推理方向。",
+      "tags": []
+    },
+    {
+      "date": "2026.04",
+      "iso": "2026-04",
+      "text": "开源项目 **SparseMM** 在 GitHub 收获 3,000+ Stars，已被多家高校课题组与两家企业采用。",
+      "tags": []
+    },
+    {
+      "date": "2026.03",
+      "iso": "2026-03",
+      "text": "获校级「青年教师教学优秀奖」；主讲课程《机器学习系统》评教成绩位列全院前 5%。",
+      "tags": [
+        "!教学"
+      ]
+    },
+    {
+      "date": "2025.12",
+      "iso": "2025-12",
+      "text": "课题组论文获 <em>MLSys 2025</em> **最佳论文奖**；另一篇获 <em>MICCAI 2025</em> 青年科学家提名。",
+      "tags": []
+    }
+  ],
+  "publications": {
+    "filters": [
+      {
+        "key": "all",
+        "label": "全部"
+      },
+      {
+        "key": "conference",
+        "label": "会议"
+      },
+      {
+        "key": "journal",
+        "label": "期刊"
+      },
+      {
+        "key": "preprint",
+        "label": "预印本"
+      }
+    ],
+    "note": "完整论文列表见 <a href=\"https://scholar.google.com/\" target=\"_blank\" rel=\"noopener\">Google Scholar</a> 或 <a href=\"cv.pdf\">简历 PDF</a>。★ 为本组代表性工作。",
+    "groups": [
+      {
+        "year": "2026",
+        "items": [
+          {
+            "title": "Sparse Routing for Efficient Multimodal Fusion",
+            "authors": "**Mingyuan Zhang**, Yao Li, Hui Wang, Lin Chen",
+            "venue": "NeurIPS",
+            "detail": "2026",
+            "tags": [
+              "Spotlight",
+              "CCF-A"
+            ],
+            "type": "conference",
+            "featured": true,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "Code",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Rethinking Token Pruning in Vision-Language Models: A Dynamic Budget Perspective",
+            "authors": "**Mingyuan Zhang**, Xiaoyu Sun, Rui Zhao",
+            "venue": "CVPR",
+            "detail": "2026",
+            "tags": [
+              "CCF-A"
+            ],
+            "type": "conference",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "BibTeX",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "TrustRAG: A Benchmark for Trustworthy Retrieval-Augmented Generation",
+            "authors": "Jing Liu, **Mingyuan Zhang**, Peter Andersen, Wei Feng",
+            "venue": "ACL",
+            "detail": "2026",
+            "tags": [
+              "CCF-A"
+            ],
+            "type": "conference",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "Dataset",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Scaling Laws for Scientific Foundation Models: An Empirical Study",
+            "authors": "**Mingyuan Zhang**, Qian Wu, Thomas Berger",
+            "venue": "Journal of Machine Learning Research",
+            "detail": "27(4): 1–38, 2026",
+            "tags": [],
+            "type": "journal",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "BibTeX",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Concept-Guided Interpretability for Clinical Multimodal Models",
+            "authors": "Yao Li, **Mingyuan Zhang**, Sarah Klein",
+            "venue": "arXiv",
+            "detail": "2603.xxxxx, 2026 · 审稿中",
+            "tags": [],
+            "type": "preprint",
+            "featured": false,
+            "links": [
+              {
+                "label": "arXiv",
+                "href": "#"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "year": "2025",
+        "items": [
+          {
+            "title": "Sparse Mixture-of-Experts Inference on Commodity GPUs",
+            "authors": "**Mingyuan Zhang**, Hao Xu, Lin Chen",
+            "venue": "MLSys",
+            "detail": "2025",
+            "tags": [
+              "!Best Paper Award"
+            ],
+            "type": "conference",
+            "featured": true,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "Code",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Interpretable Concept Bottlenecks for Clinical Risk Prediction",
+            "authors": "**Mingyuan Zhang**, Sarah Klein, Yao Li, David Chen",
+            "venue": "Nature Machine Intelligence",
+            "detail": "7(9): 1204–1218, 2025",
+            "tags": [],
+            "type": "journal",
+            "featured": true,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "Code",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Data-Efficient Protein Function Annotation with Structure-Aware Pretraining",
+            "authors": "Qian Wu, **Mingyuan Zhang**, Elena Rossi",
+            "venue": "Nature Communications",
+            "detail": "16: 8842, 2025",
+            "tags": [],
+            "type": "journal",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "BibTeX",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "On the Robustness of Medical Vision-Language Models under Distribution Shift",
+            "authors": "Xiaoyu Sun, **Mingyuan Zhang**, Hui Wang",
+            "venue": "MICCAI",
+            "detail": "2025",
+            "tags": [
+              "!青年科学家提名"
+            ],
+            "type": "conference",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "year": "2024",
+        "items": [
+          {
+            "title": "Efficient Multimodal Learning: A Survey",
+            "authors": "**Mingyuan Zhang**, Rui Zhao, Wei Feng",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+            "detail": "46(11): 7012–7034, 2024",
+            "tags": [],
+            "type": "journal",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "BibTeX",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Contrastive Alignment of Radiology Reports and Images at Scale",
+            "authors": "Yao Li, **Mingyuan Zhang**, Hao Xu",
+            "venue": "AAAI",
+            "detail": "2024",
+            "tags": [
+              "CCF-A"
+            ],
+            "type": "conference",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              },
+              {
+                "label": "Code",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Human-in-the-Loop Active Learning for Rare Disease Diagnosis",
+            "authors": "Lin Chen, Sarah Klein, **Mingyuan Zhang**",
+            "venue": "CHI",
+            "detail": "2024",
+            "tags": [
+              "CCF-A"
+            ],
+            "type": "conference",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "year": "2023",
+        "items": [
+          {
+            "title": "Federated Learning with Heterogeneous Clinical Data: A Privacy-Preserving Framework",
+            "authors": "**Mingyuan Zhang**, Elena Rossi, Thomas Berger",
+            "venue": "IEEE Journal of Biomedical and Health Informatics",
+            "detail": "27(8): 3901–3913, 2023",
+            "tags": [],
+            "type": "journal",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Prompt-based Few-shot Transfer for Cross-Lingual Retrieval",
+            "authors": "Rui Zhao, **Mingyuan Zhang**",
+            "venue": "EMNLP",
+            "detail": "2023",
+            "tags": [],
+            "type": "conference",
+            "featured": false,
+            "links": [
+              {
+                "label": "PDF",
+                "href": "#"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "join": {
+    "items": [
+      {
+        "title": "正在招收",
+        "paragraphs": [
+          "课题组每年招收博士生 1–2 名、硕士生 2–3 名，并长期接收科研实习生与访问学生。"
+        ],
+        "bullets": [
+          "计算机、自动化、数学、统计或生物医学工程背景",
+          "扎实的编程能力（Python / PyTorch），有系统或算法竞赛经历者优先",
+          "对效率、可信性或科学应用中的至少一个方向有真实兴趣",
+          "愿意做可复现、能开源的研究"
+        ]
+      },
+      {
+        "title": "合作与评审",
+        "paragraphs": [
+          "欢迎医学影像、临床信息学、计算生物学方向的老师与我们联合申报课题或共同指导学生；也欢迎产业界就高效推理与模型评测开展合作。",
+          "担任 NeurIPS、ICML、CVPR、ACL 等会议程序委员会委员，以及 TPAMI、Nature Machine Intelligence 审稿人。",
+          "邮件请附简历与一段简短的研究兴趣说明，通常一周内回复。"
+        ],
+        "bullets": []
+      }
+    ]
+  },
+  "contact": {
+    "email": "mingyuan.zhang@example.edu.cn",
+    "linksTitle": "学术主页与代码",
+    "lines": [
+      {
+        "label": "地址",
+        "value": "某某省某某市某某区某某路 1 号<br>某某大学 信息楼 512 室（邮编 000000）"
+      },
+      {
+        "label": "电话",
+        "value": "+86 000 0000 0000（办公）"
+      },
+      {
+        "label": "时间",
+        "value": "周一至周五 09:00–18:00，也欢迎预约线上会议"
+      }
+    ],
+    "links": [
+      {
+        "label": "Google Scholar",
+        "href": "https://scholar.google.com/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/"
+      },
+      {
+        "label": "ORCID",
+        "href": "https://orcid.org/"
+      },
+      {
+        "label": "DBLP",
+        "href": "https://dblp.org/"
+      },
+      {
+        "label": "CV (PDF)",
+        "href": "cv.pdf"
+      },
+      {
+        "label": "Email",
+        "href": "mailto:mingyuan.zhang@example.edu.cn"
+      }
+    ]
+  }
+}
